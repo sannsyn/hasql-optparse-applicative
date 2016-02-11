@@ -63,6 +63,6 @@ connectionSettings prefix =
         long (prefixed "database") <>
         value "" <>
         showDefault <>
-        help "Default database name"
+        help "Database name"
     prefixed s = 
       maybe s (<> ("-" <> s)) prefix
