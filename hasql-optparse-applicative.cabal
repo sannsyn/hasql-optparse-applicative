@@ -1,7 +1,7 @@
 name:
   hasql-optparse-applicative
 version:
-  0.1
+  0.1.1
 synopsis:
   "optparse-applicative" parsers for "hasql"
 category:
@@ -49,4 +49,4 @@ library
     -- 
     optparse-applicative >= 0.12 && < 0.13,
     -- 
-    base-prelude >= 0.1 && < 0.2
+    base-prelude < 2
