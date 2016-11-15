@@ -25,8 +25,8 @@ poolSettings prefix =
         value 10 <>
         showDefault <>
         help "Amount of seconds for which the unused connections are kept open"
-    prefixed s = 
-      maybe s (<> ("-" <> s)) prefix
+    prefixed =
+      maybe id (\prefix string -> prefix <> "-" <> string) prefix
 
 -- |
 -- Given a prefix for long names produces a parser of @Hasql.Connection.'Hasql.Connection.Settings'@.
