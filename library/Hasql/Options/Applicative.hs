@@ -61,8 +61,6 @@ connectionSettings prefix =
     database =
       fmap fromString $ strOption $
         long (prefixed "database") <>
-        value "" <>
-        showDefault <>
         help "Database name"
     prefixed s = 
       maybe s (<> ("-" <> s)) prefix
