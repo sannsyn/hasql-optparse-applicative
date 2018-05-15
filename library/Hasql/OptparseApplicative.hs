@@ -1,6 +1,6 @@
 module Hasql.OptparseApplicative where
 
-import BasePrelude
+import BasePrelude hiding (option)
 import Options.Applicative
 import qualified Hasql.Connection as A
 import qualified Hasql.Pool as B
