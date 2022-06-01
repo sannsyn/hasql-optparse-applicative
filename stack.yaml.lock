@@ -6,11 +6,11 @@
 packages:
 - completed:
     pantry-tree:
-      sha256: 8d48bcc50eb912824614f94b5a93c980d00f029206be9b9d1f5b4e513f260ba6
+      sha256: 167a1c0b382088f1995e670c6a2888dce203f2e139ca4862f40cfc4522b2cbac
       size: 345
-    hackage: hasql-pool-0.6@sha256:ba0d306c5ee3490275697b06460431f2d62dc30768f1f79b2c80ee7bebbd8544,2412
+    hackage: hasql-pool-0.7@sha256:12317b83f2dbe48649d5b28461391db40aca4827ba395c224b29631a2886306a,2412
   original:
-    hackage: hasql-pool-0.6
+    hackage: hasql-pool-0.7
 snapshots:
 - completed:
     sha256: 745db8e7afc79b92e70b0e6325557d2ceddb4661e4123f1e358e475f545fade8

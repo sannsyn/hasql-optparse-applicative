@@ -5,14 +5,14 @@ import qualified Hasql.Connection as A
 import qualified Hasql.Pool as B
 import Options.Applicative
 
--- | Given a function, which updates the long names produces a parser of
--- the @Hasql.Pool.'B.Settings'@.
+-- | Given a function, which updates the long names, produces a parser of
+-- the @Hasql.Pool.'acquire'@ operation.
 --
 -- You can use this function to prefix the name or you can just specify 'id',
 -- if you don't want it changed.
-poolSettings :: (String -> String) -> Parser B.Settings
+poolSettings :: (String -> String) -> Parser (IO B.Pool)
 poolSettings updatedName =
-  (,,) <$> size <*> timeout <*> connectionSettings updatedName
+  B.acquire <$> size <*> connectionSettings updatedName
   where
     size =
       option auto $
@@ -20,13 +20,6 @@ poolSettings updatedName =
           <> value 1
           <> showDefault
           <> help "Amount of connections in the pool"
-    timeout =
-      fmap fromIntegral $
-        option auto $
-          long (updatedName "pool-timeout")
-            <> value 10
-            <> showDefault
-            <> help "Amount of seconds for which the unused connections are kept open"
 
 -- | Given a function, which updates the long names produces a parser
 -- of @Hasql.Connection.'A.Settings'@.
