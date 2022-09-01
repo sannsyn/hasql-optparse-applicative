@@ -12,14 +12,22 @@ import Options.Applicative
 -- if you don't want it changed.
 poolSettings :: (String -> String) -> Parser (IO B.Pool)
 poolSettings updatedName =
-  B.acquire <$> size <*> connectionSettings updatedName
+  B.acquire <$> size <*> acquisitionTimeout <*> connectionSettings updatedName
   where
     size =
-      option auto $
-        long (updatedName "pool-size")
-          <> value 1
-          <> showDefault
-          <> help "Amount of connections in the pool"
+      option auto . mconcat $
+        [ long (updatedName "pool-size"),
+          value 1,
+          showDefault,
+          help "Amount of connections in the pool"
+        ]
+    acquisitionTimeout =
+      optional . fmap (* 1000000) . option auto . mconcat $
+        [ long (updatedName "pool-acquisition-timeout"),
+          value 10,
+          showDefault,
+          help "How long it takes until the attempt to connect is considered timed out. In seconds"
+        ]
 
 -- | Given a function, which updates the long names produces a parser
 -- of @Hasql.Connection.'A.Settings'@.
