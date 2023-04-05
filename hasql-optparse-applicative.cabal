@@ -60,7 +60,9 @@ library
   default-language:   Haskell2010
   exposed-modules:    Hasql.OptparseApplicative
   build-depends:
+    , attoparsec >=0.14 && <0.15
+    , attoparsec-time >=1.0.3 && <1.1
     , base-prelude <2
     , hasql >=1.6 && <1.7
-    , hasql-pool >=0.8 && <0.9
+    , hasql-pool >=0.9 && <0.10
     , optparse-applicative >=0.17 && <0.18
