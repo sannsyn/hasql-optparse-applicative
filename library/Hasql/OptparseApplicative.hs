@@ -1,9 +1,9 @@
 module Hasql.OptparseApplicative where
 
 import qualified Attoparsec.Time.Text as C
-import BasePrelude
 import qualified Data.Attoparsec.Text as D
 import qualified Hasql.Connection as A
+import Hasql.OptparseApplicative.Prelude
 import qualified Hasql.Pool as B
 import Options.Applicative
 
