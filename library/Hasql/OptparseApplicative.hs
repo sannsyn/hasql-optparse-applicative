@@ -1,4 +1,8 @@
-module Hasql.OptparseApplicative where
+module Hasql.OptparseApplicative
+  ( poolSettings,
+    attoparsedOption,
+  )
+where
 
 import qualified Attoparsec.Time.Text as C
 import qualified Data.Attoparsec.Text as D
