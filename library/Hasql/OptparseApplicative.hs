@@ -49,7 +49,7 @@ poolSettings updatedName =
     connectionIdleTime =
       attoparsedOption C.diffTime . mconcat $
         [ long (updatedName "pool-connection-idle-time"),
-          value (fromIntegral (24 * 60 * 60)),
+          value (fromIntegral (5 * 60)),
           showDefault,
           help "Maximal connection idle time"
         ]
