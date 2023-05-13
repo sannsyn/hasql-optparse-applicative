@@ -22,6 +22,7 @@ poolSettings updatedName =
     <$> size
     <*> acquisitionTimeout
     <*> connectionLifetime
+    <*> connectionIdleTime
     <*> connectionSettings updatedName
   where
     size =
@@ -44,6 +45,13 @@ poolSettings updatedName =
           value (fromIntegral (24 * 60 * 60)),
           showDefault,
           help "Maximal lifetime for connections. Allows to periodically clean up the connection resources to avoid server-side leaks"
+        ]
+    connectionIdleTime =
+      attoparsedOption C.diffTime . mconcat $
+        [ long (updatedName "pool-connection-idle-time"),
+          value (fromIntegral (24 * 60 * 60)),
+          showDefault,
+          help "Maximal connection idle time"
         ]
 
 -- | Given a function, which updates the long names produces a parser
