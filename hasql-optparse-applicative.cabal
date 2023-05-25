@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name:          hasql-optparse-applicative
-version:       0.7.1
+version:       0.7.1.1
 synopsis:      "optparse-applicative" parsers for "hasql"
 category:      Hasql, Database, PostgreSQL, Options
 homepage:      https://github.com/sannsyn/hasql-optparse-applicative 
@@ -66,4 +66,4 @@ library
     , base >=4.11 && <5
     , hasql >=1.6 && <1.7
     , hasql-pool >=0.10 && <0.11
-    , optparse-applicative >=0.17 && <0.18
+    , optparse-applicative >=0.17 && <0.19
